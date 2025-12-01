@@ -1,0 +1,74 @@
+import React, { useState } from 'react';
+import { Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
+import './Dock.css';
+
+const Dock = () => {
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  // Function Theme
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    document.body.classList.toggle('light-mode');
+  };
+
+  const socials = [
+    {
+      id: "github",
+      icon: <Github size={22} />,
+      label: "GitHub",
+      url: "https://github.com/IlyassLho"
+    },
+    {
+      id: "linkedin",
+      icon: <Linkedin size={22} />,
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/ilyas-lhouari-2001a01b01c/"
+    },
+    {
+      id: "email",
+      icon: <Mail size={22} />,
+      label: "Email",
+      url: "mailto:ilyasslhouari@gmail.com"
+    },
+  ];
+
+  return (
+    <div className="dock-container">
+      <div className="dock-bar">
+
+        {/* Social Icons */}
+        {socials.map((item) => (
+          <a
+            key={item.id}
+            href={item.url}
+            target="_blank"
+            rel="noreferrer"
+            className="dock-item"
+            aria-label={item.label}
+          >
+            {item.icon}
+            <span className="dock-tooltip">{item.label}</span>
+          </a>
+        ))}
+
+        {/* Separator (خط فاصل) */}
+        <div className="dock-separator"></div>
+
+        {/*Mode Toggle */}
+        <button
+          onClick={toggleTheme}
+          className="dock-item"
+          aria-label="Toggle Theme"
+        >
+          {isDarkMode ? <Sun size={22} /> : <Moon size={22} />}
+          <span className="dock-tooltip">
+            {isDarkMode ? "Light Mode" : "Dark Mode"}
+          </span>
+        </button>
+
+      </div>
+    </div>
+  );
+};
+
+export default Dock;
