@@ -15,7 +15,8 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-icon-cloud": "^4.1.7",
-    "react-tilt": "^1.0.2",
+    "react-icons": "^5.5.0",
+    "react-parallax-tilt": "^1.7.314",
     "simple-icons": "^16.0.0"
   },
   "devDependencies": {
