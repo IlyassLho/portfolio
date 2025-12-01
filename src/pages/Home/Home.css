@@ -2,7 +2,6 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background-color: #1e1e1e;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,7 +38,6 @@
 
 .greeting {
   font-size: 1.7rem;
-  color: #c5c5c5;
   font-weight: 500;
   margin-bottom: 10px;
 }
@@ -48,7 +46,6 @@
   font-size: 5rem;
   line-height: 1.1;
   font-weight: 900;
-  color: #fff;
   margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 3px;
