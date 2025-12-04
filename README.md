@@ -5,7 +5,7 @@
   <br/><br/>
   
   <h1>Hi, I'm <span style="color: #D083A0;">Ilyas Lhouari</span> 👋</h1>
-  <h3>Full Stack Developer & Software Engineer</h3>
+  <h3>Full Stack Developer</h3>
 
   <a href="https://ilyaslhouari.netlify.app/"><strong>➥ View Live Demo</strong></a>
   <br/><br/>
