@@ -10,6 +10,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Skills from './pages/Skills/Skills';
 import Education from './pages/Education/Education';
+import Project from './pages/Project/Projects';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,6 +26,7 @@ function App() {
           <About />
           <Skills />
           <Education />
+          <Project />
           <Dock />
         </div>
       )}
