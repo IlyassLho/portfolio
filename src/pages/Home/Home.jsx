@@ -1,6 +1,5 @@
-import React from "react";
-import { Github, Linkedin, Mail, FileText } from "lucide-react";
 import IconCloud from "../../components/IconCloud";
+import Sparkles from "../../components/Sparkles/Sparkles";
 import "./Home.css";
 
 function Home() {
@@ -17,10 +16,12 @@ function Home() {
                         Hi, I'm Ilyas <span className="wave">👋🏻</span>
                     </h2>
 
-                    <h1 className="hero-title-large">
-                        FULLSTACK<br />
-                        <span className="stroke-text">DEVELOPER</span>
-                    </h1>
+                    <Sparkles minSize={30} maxSize={70}>
+                        <h1 className="hero-title-large">
+                            FULLSTACK<br />
+                            <span className="stroke-text">DEVELOPER</span>
+                        </h1>
+                    </Sparkles>
 
                     {/* Subtitle */}
                     {/* <h3 className="hero-subtitle">

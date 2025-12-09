@@ -78,28 +78,128 @@
   animation: wave-anim 2s infinite;
   transform-origin: 70% 70%;
 }
+
 @keyframes wave-anim {
-  0% { transform: rotate(0deg); }
-  10% { transform: rotate(14deg); }
-  20% { transform: rotate(-8deg); }
-  30% { transform: rotate(14deg); }
-  40% { transform: rotate(-4deg); }
-  50% { transform: rotate(10deg); }
-  60% { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(14deg);
+  }
+
+  20% {
+    transform: rotate(-8deg);
+  }
+
+  30% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 /* RESPONSIVE */
+@media (max-width: 1024px) {
+  .home-section {
+    padding: 10px 30px;
+  }
+
+  .home-content {
+    max-width: 100%;
+    gap: 30px;
+  }
+
+  .hero-title-large {
+    font-size: 4rem;
+  }
+}
+
 @media (max-width: 968px) {
+  .home-section {
+    padding: 10px 20px;
+  }
+
   .home-content {
     flex-direction: column-reverse;
     text-align: center;
     gap: 40px;
   }
-  .home-header { 
+
+  .home-header {
+    flex: 1;
     padding-right: 0;
     padding-top: 30px;
   }
-  .hero-title-large { font-size: 3.5rem; }
-  .hero-subtitle { font-size: 1.5rem; }
+
+  .location-badge {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+  }
+
+  .greeting {
+    font-size: 1.3rem;
+  }
+
+  .hero-title-large {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+  }
+
+  .stroke-text {
+    -webkit-text-stroke: 1.5px #D083A0;
+  }
+
+  .wave {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 359px) {
+  .home-section {
+    padding: 10px 15px;
+    min-height: auto;
+  }
+
+  .home-header {
+    padding-top: 20px;
+  }
+
+  .location-badge {
+    font-size: 0.6rem;
+    padding: 3px 8px;
+  }
+
+  .greeting {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .hero-title-large {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+
+  .stroke-text {
+    -webkit-text-stroke: 1px #D083A0;
+  }
+
+  .wave {
+    font-size: 1rem;
+  }
 }
