@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
 import './Dock.css';
 
 const Dock = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const { t } = useTranslation();
 
   // Function Theme
   const toggleTheme = () => {
@@ -22,7 +24,7 @@ const Dock = () => {
       id: "linkedin",
       icon: <Linkedin size={22} />,
       label: "LinkedIn",
-      url: "https://www.linkedin.com/in/ilyas-lhouari-2001a01b01c/"
+      url: "https://www.linkedin.com/in/ilyas-lhouari/"
     },
     {
       id: "email",
@@ -51,18 +53,18 @@ const Dock = () => {
           </a>
         ))}
 
-        {/* Separator (خط فاصل) */}
+        {/* Separator */}
         <div className="dock-separator"></div>
 
         {/*Mode Toggle */}
         <button
           onClick={toggleTheme}
           className="dock-item"
-          aria-label="Toggle Theme"
+          aria-label={t('dock_toggle_theme')}
         >
           {isDarkMode ? <Sun size={22} /> : <Moon size={22} />}
           <span className="dock-tooltip">
-            {isDarkMode ? "Light Mode" : "Dark Mode"}
+            {isDarkMode ? t('dock_light_mode') : t('dock_dark_mode')}
           </span>
         </button>
 

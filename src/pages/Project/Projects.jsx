@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation, Trans} from "react-i18next";
 import { Github, ExternalLink } from "lucide-react";
 import "./Projects.css";
 
@@ -7,26 +8,28 @@ import portfolioImg from "../../assets/Projects/portfolio.png";
 import movieAppImg from "../../assets/Projects/movie.png";
 
 function Projects() {
+  const { t } = useTranslation();
+
   const projects = [
     {
-      title: "Click Shop",
-      desc: "A specialized Cash on Delivery (COD) e-commerce platform built for the Moroccan market. It features a serverless architecture using Google Sheets for real-time order management and integrates advanced Facebook Pixel events for ad optimization.",
+      titleKey: "project_clickshop_title",
+      descKey: "project_clickshop_desc",
       img: clickShopImg,
       tags: ["React", "Vite", "Google Sheets API", "Facebook Pixel"],
       github: "https://github.com/IlyassLho/E-com-Store",
       demo: "https://click-shop.ma",
     },
     {
-      title: "My Portfolio",
-      desc: "My personal professional portfolio website to showcase my skills, experience, and projects. Designed with a clean, responsive UI using the latest web technologies.",
+      titleKey: "project_portfolio_title",
+      descKey: "project_portfolio_desc",
       img: portfolioImg,
       tags: ["React.js", "Vite", "Tailwind CSS", "Framer Motion"],
       github: "https://github.com/IlyassLho/portfolio",
       demo: "https://ilyaslhouari.netlify.app/",
     },
     {
-      title: "Ily Flicks - TMDB Client",
-      desc: "An interactive movie discovery application that allows users to search for movies, view details, ratings, using the TMDB API.",
+      titleKey: "project_movie_title",
+      descKey: "project_movie_desc",
       img: movieAppImg,
       tags: ["React.js", "TMDB API", "Axios", "CSS3"],
       github: "https://github.com/IlyassLho/movie-app",
@@ -39,7 +42,10 @@ function Projects() {
       <div className="projects-container">
 
         <h2 className="section-title">
-          My Recent <span className="text-primary">Works</span>
+          <Trans 
+             i18nKey="projects_title" 
+             components={{ span: <span className="text-primary" /> }} 
+          />
         </h2>
 
         <div className="projects-grid">
@@ -48,14 +54,14 @@ function Projects() {
 
               {/* Image Area */}
               <div className="project-img-wrapper">
-                <img src={project.img} alt={project.title} className="project-img" />
+                <img src={project.img} alt={t(project.titleKey)} className="project-img" />
                 <div className="project-overlay">
                   <a href={project.github} target="_blank" rel="noreferrer" className="btn-overlay">
-                    <Github size={20} /> Code
+                    <Github size={20} /> {t('project_btn_code')}
                   </a>
                   {project.demo && (
                     <a href={project.demo} target="_blank" rel="noreferrer" className="btn-overlay">
-                      <ExternalLink size={20} /> Demo
+                      <ExternalLink size={20} /> {t('project_btn_demo')}
                     </a>
                   )}
                 </div>
@@ -63,8 +69,8 @@ function Projects() {
 
               {/* Content Area */}
               <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-desc">{project.desc}</p>
+                <h3 className="project-title">{t(project.titleKey)}</h3>
+                <p className="project-desc">{t(project.descKey)}</p>
 
                 <div className="project-tags">
                   {project.tags.map((tag, i) => (
@@ -77,11 +83,11 @@ function Projects() {
                 {/* (Mobile mostly) */}
                 <div className="project-buttons">
                   <a href={project.github} target="_blank" rel="noreferrer" className="btn-github">
-                    <Github size={18} /> GitHub
+                    <Github size={18} /> {t('project_btn_github')}
                   </a>
                   {project.demo && (
                     <a href={project.demo} target="_blank" rel="noreferrer" className="btn-demo">
-                      <ExternalLink size={18} /> Demo
+                      <ExternalLink size={18} /> {t('project_btn_demo')}
                     </a>
                   )}
                 </div>

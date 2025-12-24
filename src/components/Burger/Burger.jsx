@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './Burger.css';
 
 const Burger = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const { t } = useTranslation();
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const links = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Education", href: "#education" },
-    { name: "Certificate", href: "#certificate" },
+    { key: "nav_home", href: "#home" },
+    { key: "nav_about", href: "#about" },
+    { key: "nav_skills", href: "#skills" },
+    { key: "nav_projects", href: "#projects" },
+    { key: "nav_education", href: "#education" },
+    { key: "nav_certificate", href: "#certificate" },
   ];
 
   return (
@@ -35,7 +36,7 @@ const Burger = () => {
               className="menu-link"
               onClick={() => setIsOpen(false)}
             >
-              {link.name}
+              {t(link.key)}
             </a>
           ))}
         </nav>

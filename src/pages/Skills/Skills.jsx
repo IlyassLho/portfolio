@@ -1,4 +1,5 @@
 import React from "react";
+import { Trans } from "react-i18next";
 import { DiMongodb, DiVisualstudio } from "react-icons/di";
 import {
     SiGithub,
@@ -9,7 +10,6 @@ import {
     SiCss3,
     SiHtml5,
     SiPython,
-    SiVite,
     SiLaravel,
     SiBootstrap,
     SiMysql,
@@ -46,7 +46,10 @@ function Skills() {
             <div className="skiils-container">
                 {/* --- Skillset --- */}
                 <h2 className="section-title">
-                    Professional <span className="text-primary">Skillset</span>
+                    <Trans 
+                        i18nKey="skills_title" 
+                        components={{ span: <span className="text-primary" /> }} 
+                    />
                 </h2>
 
                 <div className="tech-grid">
@@ -60,7 +63,10 @@ function Skills() {
 
                 {/* --- Tools --- */}
                 <h2 className="section-title" style={{ marginTop: "50px" }}>
-                    <span className="text-primary">Tools</span> I Use
+                    <Trans 
+                        i18nKey="tools_title" 
+                        components={{ span: <span className="text-primary" /> }} 
+                    />
                 </h2>
 
                 <div className="tech-grid">
