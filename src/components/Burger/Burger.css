@@ -72,3 +72,14 @@
 .menu-link:hover {
   background-color: #ffffff10;
 }
+
+/* RTL Support */
+[dir="rtl"] .burger-btn {
+  right: auto;
+  left: 1rem;
+}
+
+[dir="rtl"] .menu-overlay {
+  right: auto;
+  left: 1rem;
+}

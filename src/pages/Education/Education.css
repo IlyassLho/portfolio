@@ -120,3 +120,30 @@ body.light-mode .timeline-content:hover {
     font-size: 0.8rem;
   }
 }
+
+/* RTL Support */
+[dir="rtl"] .timeline {
+  padding-left: 0;
+  padding-right: 30px;
+  border-left: none;
+  border-right: 3px solid rgba(208, 131, 160, 0.3);
+}
+
+[dir="rtl"] .timeline-dot {
+  left: auto;
+  right: -38px;
+}
+
+[dir="rtl"] .timeline-content:hover {
+  transform: translateX(-5px);
+}
+
+@media (max-width: 600px) {
+  [dir="rtl"] .timeline {
+    padding-right: 20px;
+  }
+
+  [dir="rtl"] .timeline-dot {
+    right: -28px;
+  }
+}
