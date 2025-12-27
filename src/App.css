@@ -27,3 +27,28 @@ body.light-mode {
   background-color: #f8fafc;
   color: #1e293b;
 }
+
+/* --- Custom Scrollbar (Webkit: Chrome, Edge, Safari) --- */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #D083A0;
+  border-radius: 6px;
+  border: 3px solid #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #f472b6;
+}
+
+/* --- Support for Firefox --- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D083A0 #0a0a0a;
+}
