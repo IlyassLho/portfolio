@@ -22,6 +22,10 @@ i18n
       ru: { ...ru },
     },
     fallbackLng: "en",
+    detection: {
+        order: ['path', 'localStorage', 'navigator'], // order of detection
+        caches: ['localStorage'], // cache the user's choice
+    },
     interpolation: {
       escapeValue: false,
     },
