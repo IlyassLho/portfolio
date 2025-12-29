@@ -12,7 +12,7 @@ function Projects() {
 
   const projects = [
     {
-      titleKey: "project_clickshop_title",
+      title: "Click Shop Maroc",
       descKey: "project_clickshop_desc",
       img: clickShopImg,
       tags: ["React", "Vite", "Google Sheets API", "Facebook Pixel"],
@@ -20,7 +20,7 @@ function Projects() {
       demo: "https://click-shop.ma",
     },
     {
-      titleKey: "project_portfolio_title",
+      title: "My Portfolio",
       descKey: "project_portfolio_desc",
       img: portfolioImg,
       tags: ["React.js", "Vite", "Tailwind CSS", "Framer Motion"],
@@ -28,7 +28,7 @@ function Projects() {
       demo: "https://ilyaslhouari.netlify.app/",
     },
     {
-      titleKey: "project_movie_title",
+      title: "Ily Flicks",
       descKey: "project_movie_desc",
       img: movieAppImg,
       tags: ["React.js", "TMDB API", "Axios", "CSS3"],
@@ -54,7 +54,7 @@ function Projects() {
 
               {/* Image Area */}
               <div className="project-img-wrapper">
-                <img src={project.img} alt={t(project.titleKey)} className="project-img" />
+                <img src={project.img} alt={project.title} className="project-img" />
                 <div className="project-overlay">
                   <a href={project.github} target="_blank" rel="noreferrer" className="btn-overlay">
                     <Github size={20} /> {t('project_btn_code')}
@@ -69,7 +69,7 @@ function Projects() {
 
               {/* Content Area */}
               <div className="project-content">
-                <h3 className="project-title">{t(project.titleKey)}</h3>
+                <h3 className="project-title">{project.title}</h3>
                 <p className="project-desc">{t(project.descKey)}</p>
 
                 <div className="project-tags">
@@ -83,7 +83,7 @@ function Projects() {
                 {/* (Mobile mostly) */}
                 <div className="project-buttons">
                   <a href={project.github} target="_blank" rel="noreferrer" className="btn-github">
-                    <Github size={18} /> {t('project_btn_github')}
+                    <Github size={18} /> {t('project_btn_code')}
                   </a>
                   {project.demo && (
                     <a href={project.demo} target="_blank" rel="noreferrer" className="btn-demo">
